@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            background-color: black;
+        }
+        .dove{
+            border-radius: 7px;
+            height: 400px;
+            width: 400px;
+            position: relative;
+        }
+        .pull:nth-child(1){
+            background-color: #EAEAED;
+            height: 50%;
+            width: 50%;
+            margin: 0;
+            position: absolute;
+            border-radius: 50%;
+        }
+        .pull:nth-child(2){
+            background-color: rgba(54, 210, 124, 0.89);
+            height: 40%;
+            width: 40%;
+            margin: 0;
+            position: absolute;
+            border-radius: 50%;
+        }
+        .dove:hover .pull{
+            animation: slide 2s ease;
+            /*animation-delay: 0.5s;*/
+            animation-iteration-count: infinite;
+            animation-duration: 2s;
+            animation-direction: alternate-reverse;
+        }
+        @keyframes slide {
+            0%{
+                left: 0;
+                top: 0;
+            }
+            50%{
+                left: 30px;
+                top: 50px;
+            }
+            100%{
+                left: 200px;
+                top: 100px;
+            }
+        }
+        @-webkit-keyframes slide {
+            from{
+                -webkit-transform: rotate(0deg);
+            }
+            to{
+                -webkit-transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dove">
+    <div class="pull">
+
+    </div>
+        <div class="pull">
+
+        </div>
+    </div>
+</body>
+</html>
