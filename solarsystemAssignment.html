@@ -1,89 +1,251 @@
-            <!DOCTYPE html>
-            <html>
-            <head lang="en">
-                <meta charset="UTF-8">
-                <title>Solar system</title>
-                <style>
-        body{
-            background-color: black;
-            width: 100%;
-            align-items: center;
-            align-content: center;
-            justify-content: center;
-            display: flex;
+    <!DOCTYPE html>
+    <html>
+    <head lang="en">
+    <meta charset="UTF-8">
+    <title>Solar system</title>
+    <style>
+    body{
+        background-color: black;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        display: flex;
+    }
+    .sun {
+        height: 50px;
+        width: 50px;
+        margin-left: 50px;
+        margin-top: 10px;
+        position: absolute;
+        border-radius: 100%;
+        background: #ffff00;
+    }
+    .mercury{
+        height: 150px;
+        width: 150px;
+        margin-top: 60px;
+        position: relative;
+        border-radius: 100%;
+        border: solid #ffffff;
+        animation: spin 10s linear infinite;
+    }
+    .mercury-go{
+        margin-top: 24px;
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        border-radius: 100%;
+        background: red;
+    }
+    .venus{
+        height: 200px;
+        width: 200px;
+        margin-left: -180px;
+        margin-top: 60px;
+        position: relative;
+        border-radius: 100%;
+        border: solid #ffffff;
+        animation: spin 10s linear infinite;
+    }
+    .venus-go{
+        margin-top: 140px;
+        height: 25px;
+        width: 25px;
+        position: absolute;
+        border-radius: 100%;
+        background: blue;
+    }
+    .earth {
+        height: 250px;
+        width: 250px;
+        margin-left: -230px;
+        margin-top: 60px;
+        position: relative;
+        border-radius: 100%;
+        border: solid #ffffff;
+        animation: spin 10s linear infinite;
+    }
+    .earth-go {
+        margin-top: 170px;
+        height: 27px;
+        width: 27px;
+        margin-left: 220px;
+        position: absolute;
+        border-radius: 100%;
+        background: green;
+    }
+    .mars{
+        height: 300px;
+        width: 300px;
+        margin-left: -280px;
+        margin-top: 60px;
+        position: relative;
+        border-radius: 100%;
+        border: solid #ffffff;
+        animation: spin 10s linear infinite;
+    }
+    .mars-go{
+        margin-top: 170px;
+        height: 27px;
+        width: 27px;
+        margin-left: 285px;
+        position: absolute;
+        border-radius: 100%;
+        background: orange;
+    }
+    .jupiter{
+        height: 350px;
+        width: 350px;
+        margin-left: -330px;
+        margin-top: 60px;
+        position: relative;
+        border-radius: 100%;
+        border: solid #ffffff;
+        animation: spin 10s linear infinite;
+    }
+    .jupiter-go{
+        margin-top: 120px;
+        height: 31px;
+        width: 32px;
+        margin-left: 330px;
+        position: absolute;
+        border-radius: 100%;
+        background: mediumpurple;
+    }
+    .jupiter-ring{
+        margin-top: 0;
+        height: 30px;
+        width: 30px;
+        margin-left: 0;
+        position: relative;
+        border-radius: 100%;
+        border: solid greenyellow;
+        animation: spin 5s linear infinite;
+    }
+    .pluto{
+        height: 400px;
+        width: 400px;
+        margin-left: -380px;
+        margin-top: 60px;
+        position: relative;
+        border-radius: 100%;
+        border: solid #ffffff;
+        animation: spin 10s linear infinite;
+    }
+    .pluto-go{
+        margin-top: 80px;
+        height: 20px;
+        width: 20px;
+        margin-left: 360px;
+        position: absolute;
+        border-radius: 100%;
+        background: #8a6d3b;
+    }
+    .neptune{
+        height: 450px;
+        width: 450px;
+        margin-left: -430px;
+        margin-top: 60px;
+        position: relative;
+        border-radius: 100%;
+        border: solid #ffffff;
+        animation: spin 10s linear infinite;
+    }
+    .neptune-go{
+        margin-top: 40px;
+        height: 30px;
+        width: 30px;
+        margin-left: 360px;
+        position: absolute;
+        border-radius: 100%;
+        background: #ffff00;
+    }
+    .uranus{
+        height: 500px;
+        width: 500px;
+        margin-left: -480px;
+        margin-top: 60px;
+        position: relative;
+        border-radius: 100%;
+        border: solid #ffffff;
+        animation: spin 10s linear infinite;
+    }
+    .uranus-go{
+        margin-top: -4px;
+        height: 30px;
+        width: 30px;
+        margin-left: 150px;
+        position: absolute;
+        border-radius: 100%;
+        background: deeppink;
+    }
+    .saturn{
+        height: 550px;
+        width: 550px;
+        margin-left: -530px;
+        margin-top: 60px;
+        position: relative;
+        border-radius: 100%;
+        border: solid #ffffff;
+        animation: spin 10s linear infinite;
+    }
+    .saturn-go{
+        margin-top: -15px;
+        height: 30px;
+        width: 30px;
+        margin-left: 300px;
+        position: absolute;
+        border-radius: 100%;
+        background: seagreen;
+    }
+
+
+    @-webkit-keyframes spin {
+        100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
         }
-          #system{
-            width: 500px;
-              margin: auto;
-              height: 600px;
-          }
-                    .sun{
-                        height: 100px;
-                        width: 100px;
-                        margin-top: 200px;
-                        margin-left: 15px;
-                        position: relative;
-                        background: yellow;
-                        border-radius: 100%;
-                        animation:spin 10s linear infinite;
-                    }
-                    .earth{
-                        height: 10%;
-                        width: 10%;
-                        margin-top: 300px;
-                        position: absolute;
-                        margin-left: 100px;
-                        background: lightblue;
-                        border-radius: 100%;
-                        border:1px solid
-                    }
-                    #earth-orbit{
-                        position: absolute;
-                        height:400px;
-                        width: 400px;
-                        margin-top: 100px;
-                        margin-left: 50px;
-                        dorder:1px dotted white;
-                        border-radius: 100%;
-                        -webkit-transform:spin 10s linear infinite;
-                        animation:spin 10s linear infinite;
-                    }
-                    #moon{
-                        height: 10px;
-                        width: 10px;
-                        border-radius: 100%;
-                        background: white;
-                        margin-left: 70px;
-                        position: absolute;
-                    }
-                    #moon-orbit{
-                        height: 100px;
-                        width: 100px;
-                        border-radius: 100%;
-                        dorder:1px dotted white;
-                        margin-left: 75px;
-                        margin-top: 25px;
-                        -webkit-animation:spin 5s linear infinite;
-                        animation:spin 5s linear infinite;
-                    }
-        @-webkit-keyframes spin{
-            100%{
-                -webkit-transform:rotate(360deg);
-                transform:rotate(360deg);
-            }
-        }
-        @keyframes spin {
-            100% {
-                -webkit-transform:rotate(360deg);
-                transform: rotate(360deg);
-            }
-        }
-                </style>
-            </head>
-            <body>
-                <div class="sun">
-                    <div class="earth">
-                    </div>
-                </div>
-            </body>
-            </html>
+    }
+    </style>
+    </head>
+    <body>
+    <div>
+        <div class="sun"></div>
+    </div>
+    <div>
+        <div class="mercury">
+            <div class="mercury-go"></div>
+        </div>
+    </div>
+    <div class="venus">
+        <div class="venus-go"></div>
+    </div>
+    <div>
+        <div class="earth">
+            <div class="earth-go"></div>
+        </div>
+    </div>
+    <div class="mars">
+        <div class="mars-go"></div>
+    </div>
+    <div class="jupiter">
+        <div class="jupiter-go">
+            <div class="jupiter-ring"></div>
+        </div>
+    </div>
+    <div class="pluto">
+        <div class="pluto-go"></div>
+    </div>
+    <div class="neptune">
+        <div class="neptune-go"></div>
+    </div>
+    <div class="uranus">
+        <div class="uranus-go"></div>
+    </div>
+    <div class="saturn">
+        <div class="saturn-go"></div>
+    </div>
+    </body>
+    </html>
